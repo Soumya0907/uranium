@@ -5,7 +5,7 @@ let printDate = function(){
 
 const printMonth = function(){
     let currentMonth = new Date()
-    console.log(currentMonth.getMonth())
+    console.log(currentMonth.getMonth()+1)
 }
 
 const getBatchInfo = function(){
