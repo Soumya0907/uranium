@@ -4,6 +4,7 @@ Backend cohort Feb 2022 - May 2022
 ## GET /all-candidates
 Write a get api that returns a list of candidate names 
 
+
 ## GET /candidates?count=3
 Write a get api that returns a list of candidates with size equal to the count value recieved in the query param.
 
