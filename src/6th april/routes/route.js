@@ -22,7 +22,7 @@ router.get('/test-me', function (req, res) {
 
 router.get('/hello', function (req, res){
     let monthArr = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]
-    console.log(_.chunk(monthArr,3))
+    console.log(_.chunk(monthArr,4))
 
     let oddArr = [1,3,5,7,9,11,13,15,17,19]
     console.log(_.tail(oddArr))

@@ -1,11 +1,9 @@
-let printDate = function(){
-    let currentDate = new Date()
-    console.log(currentDate.getDate())
+const printDate = function(){
+    console.log('06-04-2022')
 }
 
 const printMonth = function(){
-    let currentMonth = new Date()
-    console.log(currentMonth.getMonth())
+    console.log('April')
 }
 
 const getBatchInfo = function(){
