@@ -5,5 +5,6 @@ let addToArray= function (req, res) {
     arr.push(x)
     res.send( {  msg: "post req 3", data: arr  } )
 }
+ 
 
 module.exports.addToArray= addToArray
