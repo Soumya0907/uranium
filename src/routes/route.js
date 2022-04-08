@@ -64,6 +64,40 @@ router.get('/films/:filmId',function(req,res){
     }
 })
 
+router.get('/missingnumber',function(req,res){
+    let arr = [1,2,3,4,5,7,8,9]
+    let missing = []
+    let sum = 0
+    for(let i in arr){
+        let x= arr[i]-arr[i-1]
+        let diff = 1
+        if(diff<x){
+            missing.push(arr[i-1]+diff)
+            diff++
+        }
+    }
+    console.log(missing);
+    res.send('done')
+
+})
+
+router.get('/missingarray',function(req,res){
+   let arr = [33,34,35,37,38,39]
+    let missing = []
+    let sum = 0
+    for(let i in arr){
+        let x= arr[i]-arr[i-1]
+        let diff = 1
+        if(diff<x){
+            missing.push(arr[i-1]+diff)
+            diff++
+        }
+    }
+    console.log(missing);
+    res.send('done')
+
+})
+
 
 module.exports = router;
 // adding this comment for no reason
