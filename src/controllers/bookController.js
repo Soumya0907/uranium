@@ -23,13 +23,14 @@ const booksInYear=async function(req,res){
 
 
      const particularBooks = async function(req,res){
-     let storedData= await BookModel.find( {bookName:/^Int/})
+     let data = req.body    
+     let storedData= await BookModel.find( {data})
      res.send({storedData})
 
 
  }
       const xINRBooks = async function(req,res){
-      let allBooks= await BookModel.find({indianPrice:{$in:["INR100","INR200","INR500"]}})
+      let allBooks= await BookModel.find({'prices.indianPrice':{$in:["INR100","INR200","INR500"]}})
         res.send({allBooks})
         
 }
