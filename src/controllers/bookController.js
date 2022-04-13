@@ -3,44 +3,43 @@ const BookModel= require("../models/bookModel")
 
 const createBook= async function (req, res) {
     let data= req.body
-
     let savedData= await BookModel.create(data)
     res.send({msg: savedData})
 }
 
 const bookList=async function(req,res){
-    let data=await BookModel.find().select({bookName:1,authorName:1,_id:0})
+    let data=await BookModel.find().select({author_id:1,_id:0})
     res.send(data)
-}
-
-
-const booksInYear=async function(req,res){
-    let data=req.params.year
-    let storedData=await BookModel.find({year:`${data}`})
-    res.send(storedData)
-
-}
-
-
-     const particularBooks = async function(req,res){
-     let data = req.body    
-     let storedData= await BookModel.find( {data})
-     res.send({storedData})
-
-
  }
-      const xINRBooks = async function(req,res){
-      let allBooks= await BookModel.find({'prices.indianPrice':{$in:["INR100","INR200","INR500"]}})
-        res.send({allBooks})
+
+
+// const booksInYear=async function(req,res){
+//     let data=req.params.year
+//     let storedData=await BookModel.find({year:`${data}`})
+//     res.send(storedData)
+
+// }
+
+
+//      const particularBooks = async function(req,res){
+//      let data = req.body    
+//      let storedData= await BookModel.find( {data})
+//      res.send({storedData})
+
+
+//  }
+//       const xINRBooks = async function(req,res){
+//       let allBooks= await BookModel.find({'prices.indianPrice':{$in:["INR100","INR200","INR500"]}})
+//         res.send({allBooks})
         
-}
+// }
 
-     const randomBooks = async function(req,res){
-    let randomBooks = await BookModel.find({$or:[{stockAvailable:{$eq:true}},{totalPages:{$gt:500}}]})
-    res.send({randomBooks})
+//      const randomBooks = async function(req,res){
+//     let randomBooks = await BookModel.find({$or:[{stockAvailable:{$eq:true}},{totalPages:{$gt:500}}]})
+//     res.send({randomBooks})
 
 
-}
+// }
 
     // let allBooks= await BookModel.find( ).count() // COUNT
 
@@ -114,8 +113,8 @@ const booksInYear=async function(req,res){
 
 
 module.exports.createBook= createBook
-module.exports.bookList= bookList
-module.exports.booksInYear = booksInYear
- module.exports.particularBooks = particularBooks
-module.exports.xINRBooks = xINRBooks
-module.exports.randomBooks = randomBooks
+ module.exports.bookList= bookList
+// module.exports.booksInYear = booksInYear
+//  module.exports.particularBooks = particularBooks
+// module.exports.xINRBooks = xINRBooks
+// module.exports.randomBooks = randomBooks
