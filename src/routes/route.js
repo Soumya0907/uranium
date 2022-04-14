@@ -14,9 +14,9 @@ router.post("/createBook", BookController.createBook  )
 
 router.post("/createAuthor", authorController.createAuthor)
 
-router.post("/authorList",authorController.authorList)
+router.get("/getId",authorController.getId)
 
-router.get("/authorName",authorController.updatePrice)
+router.post("/getName",authorController.getName)
 
 router.get("/bookRange",authorController.bookRange)
 

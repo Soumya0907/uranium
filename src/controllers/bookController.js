@@ -7,10 +7,16 @@ const createBook= async function (req, res) {
     res.send({msg: savedData})
 }
 
-const bookList=async function(req,res){
-    let data=await BookModel.find().select({author_id:1,_id:0})
-    res.send(data)
- }
+
+
+
+
+
+
+// const bookList=async function(req,res){
+//     let data=await BookModel.find().select({author_id:1,_id:0})
+//     res.send(data)
+//  }
 
 
 // const booksInYear=async function(req,res){
@@ -113,7 +119,7 @@ const bookList=async function(req,res){
 
 
 module.exports.createBook= createBook
- module.exports.bookList= bookList
+// module.exports.bookList= bookList
 // module.exports.booksInYear = booksInYear
 //  module.exports.particularBooks = particularBooks
 // module.exports.xINRBooks = xINRBooks
