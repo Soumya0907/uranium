@@ -11,5 +11,12 @@ const getAuthorsData= async function (req, res) {
     res.send({data: authors})
 }
 
+const createNewAuthor = async function(req,res){
+    let newAuthor = req.body
+    let savedData = await AuthorModel.create(newAuthor)
+    res.send({newAuthor:savedData})
+}
+
 module.exports.createAuthor= createAuthor
 module.exports.getAuthorsData= getAuthorsData
+module.exports.createNewAuthor = createNewAuthor
