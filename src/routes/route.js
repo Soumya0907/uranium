@@ -6,6 +6,13 @@ const BookController= require("../controllers/bookController")
 const commonMW = require ("../middlewares/commonMiddlewares")
 
 router.get("/test-me", function (req, res) {
+    console.log(req)
+     let forwarded = req.headers['x-forwarder-for']
+     let ip = forwarded?forwarded.split(/,/)[0]:req.connection.remoteAddress
+    console.log(ip)
+    console.log(req.route.path)
+    let date = new Date()
+    console.log(date)
     res.send("My first ever api!")
 })
 
@@ -17,12 +24,12 @@ router.post("/createBook", BookController.createBook  )
 
 
 
-// router.post("/createUser", UserController.createUser  )
-// router.get("/getUsersData", UserController.getUsersData)
+ router.post("/createUser", UserController.createUser  )
+ router.get("/getUsersData", UserController.getUsersData)
 
 
-// const mid1= function ( req, res, next) {
-//     console.log("Hi I am a middleware named Mid1")
+ const mid1= function ( req, res, next) {
+     console.log("Hi I am a middleware named Mid1")}
 //     // logic
 //     let loggedIn = false
 
