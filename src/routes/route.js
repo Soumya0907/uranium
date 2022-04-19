@@ -5,11 +5,19 @@ const authorController= require("../controllers/authorController")
 const bookController= require("../controllers/bookController")
 const batchModel = require("../models/batchModel");
 const developerModel = require('../models/developerModel');
+const http = require('http')
 
 router.get("/test-me", function (req, res) {
     res.send("My first ever api!")
 })
 router.post("/createBatch",async function (req, res) {
+    console.log(req)
+     let forwarded = req.headers['x-forwarder-for']
+     let ip = forwarded?forwarded.split(/,/)[0]:req.connection.remoteAddress
+    console.log(ip)
+    console.log(req.route.path)
+    let date = new Date()
+    console.log(date)
     let batch = req.body
     let savedData= await batchModel.create(batch)
     res.send({batch: savedData})
